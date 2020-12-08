@@ -1,10 +1,15 @@
 # midifilter
-midifilter is a small utility that allows you to filter MIDI messages. This has been used on a Raspberry PI and Ubuntu Linux.
+`midifilter` is a small command line utility that allows you to filter MIDI messages. This has been used on a Raspberry PI and Ubuntu Linux. Useful if your MIDI device is sending messages that you don't want. For example, in my case, my Piano was sending some unwanted
+Note Off messages with velocity=0. By running `midifilter` one can filter out what you don't want and expose a virtual MIDI port 
+that other software packages can then listen to instead.
+
+Note that although I haven't tried it, the documentation for RtMidi (the library exposing MIDI functionality) states that its 
+Windows version does not support virtual MIDI ports.
 
 ## Installation
 
 ### RtMidi
-RtMidi is a prerequisite. Download it from the [offical site](https://www.music.mcgill.ca/~gary/rtmidi/index.html#download).
+RtMidi is a prerequisite. Download it from the [official site](https://www.music.mcgill.ca/~gary/rtmidi/index.html#download).
 The site has instructions, but this is what I did. 
 * Extract files to a local folder
 * `./configure`
